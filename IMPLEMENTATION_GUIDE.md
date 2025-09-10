@@ -90,6 +90,30 @@ export default nextConfig;
 
 ## 6. Customize Content
 
+### Site Information
+
+Update `src/app/(blog)/blog/__configs/siteInfo.ts` to customize your blog's
+content and branding:
+
+```typescript
+export const siteInfo = {
+   title: "Your Blog Title",
+   description: "Your blog description for SEO and social sharing",
+   newsLetterTitle: "Subscribe to Our Newsletter",
+   discoverModalTitle: "Discover More About Us",
+   newsLetterDescription: "Stay updated with our latest content and insights.",
+   discoverModalDescription: "Learn more about our mission and values.",
+   modalContentTitleClass:
+      "!leading-[1.35] md:!leading-[1.25] lg:!leading-[1.25]",
+   modalContentDescriptionClass:
+      "!leading-normal md:!leading-normal lg:!leading-normal",
+   primaryBtnContent: "Learn More",
+   secondaryBtnContent: "Contact Us",
+   primaryBtnLink: "https://yoursite.com/about",
+   secondaryBtnLink: "https://yoursite.com/contact",
+};
+```
+
 ### Typography Component
 
 Update `src/app/(blog)/blog/__components/ui/Typography.tsx` for custom
