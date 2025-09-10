@@ -1,12 +1,11 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
 :root {
-   --swiper-theme-color: #bb2a8c !important;
-   --mainGradient: #bb2a8c;
+   --swiper-theme-color: hsl(var(--accent)) !important;
+   --mainGradient: hsl(var(--accent));
 }
 
 html {
@@ -27,11 +26,11 @@ body {
    }
 
    .btn-primary {
-      @apply btn text-black bg-gradient;
+      @apply btn text-primary-foreground bg-gradient;
    }
 
    .btn-secondary {
-      @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-black hover:bg-gradient;
+      @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-primary-foreground hover:bg-gradient;
    }
 
    .card {
@@ -39,46 +38,21 @@ body {
    }
 
    .title {
-      @apply text-3xl md:text-4xl text-primaryBlack font-bold font-inter;
+      @apply text-3xl md:text-4xl text-foreground font-bold font-inter;
    }
 
    .subtitle {
-      @apply text-lg md:text-xl font-medium text-secondaryBlack font-inter;
+      @apply text-lg md:text-xl font-medium text-muted-foreground font-inter;
    }
 
    .nav-links {
-      @apply text-base font-medium text-primaryBlack hover:text-accent transition-colors duration-200;
+      @apply text-base font-medium text-foreground hover:text-accent transition-colors duration-200;
    }
 
    .input {
-      @apply block w-full px-4 py-4 text-primaryBlack bg-white border border-lightgray focus:outline-none focus:ring-accent focus:border-accent caret-accent;
+      @apply block w-full px-4 py-4 text-foreground bg-background border border-border focus:outline-none focus:ring-accent focus:border-accent caret-accent;
    }
 }
-
-/* .backToTop {
-    bottom: 25px;
-    right: 25px;
-    position: fixed;
-    font-size: 28px;
-    width: 60px;
-    height: 60px;
-    overflow: hidden;
-    color: #ffffff;
-    cursor: pointer;
-    border: none;
-    border-radius: 50%;
-    -webkit-border-radius: 55px;
-    -moz-border-radius: 55px;
-    -ms-border-radius: 55px;
-    -o-border-radius: 55px;
-    background: var(--mainGradient);
-    transition: scale 0.1s ease-out;
-    z-index: 50;
-} */
-
-/* .backToTop:hover {
-    scale: 1.1;
-} */
 
 .bg-gradient {
    background: var(--mainGradient);
@@ -89,7 +63,7 @@ body {
    width: 400px;
    height: 400px;
    background: transparent;
-   border: 8px solid #fff;
+   border: 8px solid hsl(var(--card));
    border-radius: 50%;
 }
 
@@ -109,7 +83,7 @@ body {
    left: 0;
    right: 0;
    bottom: 0;
-   background: red;
+   background: hsl(var(--destructive));
    z-index: 2;
 }
 
@@ -155,18 +129,12 @@ body {
 .blog-layout-custom-style .axil-post-details h1,
 .blog-layout-custom-style .axil-post-details h2,
 .blog-layout-custom-style .axil-post-details h3 {
-   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
    line-height: 1.25 !important;
 }
 
 .axil-post-details h1 span {
-   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
-}
-
-.axil-post-details {
-   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
 }
 
 .line-clamp-2 {
@@ -177,125 +145,14 @@ body {
    text-overflow: ellipsis;
 }
 
-.trimuk_blog_slider .swiper-button-prev1 {
-   left: -30px !important;
-   display: block;
-   /* top: 50% !important; */
-   /* transform: translateY(-50%); */
-}
-
-.trimuk_blog_slider .swiper-button-next1 {
-   right: -30px !important;
-   /* top: 50% !important; */
-   /* transform: translateY(-50%); */
-   display: block;
-}
-
-.trimuk_blog_slider .swiper-button-prev,
-.trimuk_blog_slider .swiper-button-next {
-   display: hidden;
-}
-
-/* Hide default Swiper navigation icons */
-
-.swiper-button-prev1,
-.swiper-button-next1 {
-   position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-   /* This centers the buttons vertically */
-   z-index: 10;
-   /* Ensures the buttons stay on top of other content */
-   /* Optional: add a background color to the button for better visibility */
-   padding: 10px;
-   /* Optional: adjust padding for better spacing around the icons */
-   cursor: pointer;
-}
-
-.swiper-button-prev1 {
-   left: -30px !important;
-   /* Adjust distance from the left side */
-}
-
-.swiper-button-next1 {
-   right: -30px !important;
-   /* Adjust distance from the right side */
-}
-
-/* When the prev or next button is disabled */
-.swiper-button-prev1.swiper-button-disabled,
-.swiper-button-next1.swiper-button-disabled {
-   opacity: 0.3;
-   /* Faded appearance */
-   cursor: not-allowed;
-   /* Show that the button is not clickable */
-   pointer-events: none;
-   /* Prevent interaction with the button */
-}
-
-.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
-   left: -60px !important;
-}
-.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
-   right: -60px !important;
-}
-@media (max-width: 640px) {
-   .swiper-button-prev1 {
-      left: 10px !important;
-      /* Adjust left position for mobile */
-   }
-
-   .swiper-button-next1 {
-      right: 10px !important;
-      /* Adjust right position for mobile */
-   }
-
-   .trimuk_blog_slider .swiper-button-prev1 {
-      left: 10px !important;
-   }
-
-   .trimuk_blog_slider .swiper-button-next1 {
-      right: 10px !important;
-   }
-
-   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
-      left: -16px !important;
-   }
-   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
-      right: -16px !important;
-   }
-}
-
-@media (min-width: 641px) and (max-width: 768px) {
-   .swiper-button-prev1 {
-      left: 10px !important; /* Adjust left position for medium devices */
-   }
-
-   .swiper-button-next1 {
-      right: 10px !important; /* Adjust right position for medium devices */
-   }
-
-   .trimuk_blog_slider .swiper-button-prev1 {
-      left: 10px !important;
-   }
-   .trimuk_blog_slider .swiper-button-next1 {
-      right: 10px !important;
-   }
-
-   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
-      left: 0px !important;
-   }
-   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
-      right: 0px !important;
-   }
-}
-
-.blog-template-modal .react-responsive-modal-container,
-.blog-template-modal .react-responsive-modal-modal {
+.react-responsive-modal-container,
+.react-responsive-modal-modal {
    border-radius: 20px !important;
 }
 
-.customModal {
+
+
+.blog-template-modal .customModal {
    z-index: 99999 !important;
    padding: 0px !important;
    max-width: 1232px !important;
@@ -303,13 +160,8 @@ body {
 
 .post-content h1,
 .post-content h1 span {
-   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
    font-weight: 600 !important;
    line-height: 1.25 !important;
-}
-
-.blog-layout-custom-style {
-   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
 }
 
 @media (max-width: 768px) {

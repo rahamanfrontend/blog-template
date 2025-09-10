@@ -7,30 +7,30 @@ import PostTagShare from "./element/PostTagShare";
 import { addLinkAttributes, applyBasePathToLinks } from "../_libs/utils";
 
 const PostFormatQuote = ({ postData, allData }: any) => {
-  const postContent = applyBasePathToLinks(postData.content, postData.title);
+   const postContent = applyBasePathToLinks(postData.content, postData.title);
 
-  // Update postContent with modified links
-  const updatedPostContent = addLinkAttributes(postContent);
+   // Update postContent with modified links
+   const updatedPostContent = addLinkAttributes(postContent);
 
-  return (
-    <>
-      <div className="post-single-wrapper py-8 bg-white">
-        <div className="container mx-auto lg:max-w-7xl justify-center">
-          <div className="flex flex-wrap justify-between gap-y-12">
-            <div className="w-full mx-auto lg:w-8/12 lg:pr-8">
-              {/* <PostMetaThree metaData={postData} /> */}
-              <div
-                className="axil-post-details mt-10"
-                dangerouslySetInnerHTML={{ __html: updatedPostContent }}
-              ></div>
-              <PostTagShare postTags={postData} />
-              <PostAuthor dataAuthor={postData} />
+   return (
+      <>
+         <div className="post-single-wrapper py-8 bg-background">
+            <div className="container mx-auto lg:max-w-7xl justify-center">
+               <div className="flex flex-wrap justify-between gap-y-12">
+                  <div className="w-full mx-auto lg:w-8/12 lg:pr-8">
+                     {/* <PostMetaThree metaData={postData} /> */}
+                     <div
+                        className="axil-post-details mt-10"
+                        dangerouslySetInnerHTML={{ __html: updatedPostContent }}
+                     ></div>
+                     <PostTagShare postTags={postData} />
+                     <PostAuthor dataAuthor={postData} />
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+         </div>
+      </>
+   );
 };
 
 export default PostFormatQuote;

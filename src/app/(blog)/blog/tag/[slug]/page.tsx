@@ -132,7 +132,7 @@ const TagBlogs = ({ params }: { params: { slug: string } }) => {
                   variant="Medium_H2"
                   className={cn(
                      blogFontConfig.title,
-                     `capitalize text-dark_blue_ text-center`
+                     `capitalize text-foreground text-center`
                   )}
                >
                   {selectedTag || "Tags"}
@@ -141,14 +141,14 @@ const TagBlogs = ({ params }: { params: { slug: string } }) => {
                   variant="Regular_H6"
                   className={cn(
                      blogFontConfig.subtitle,
-                     `text-blog-dark_gray text-center`
+                     `text-muted-foreground text-center`
                   )}
                >
                   {siteInfo.description}
                </Typography>
                <div className="relative mt-4 w-full max-w-[400px]  md:!px-0">
                   <Input
-                     className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-light_gray focus:!outline-primary focus-visible:!outline-primary"
+                     className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-muted-foreground focus:!outline-primary focus-visible:!outline-primary"
                      placeholder="Search yoga tips, poses, or articles..."
                      value={searchString}
                      onChange={(e) => setSearchString(e.target.value)}
@@ -161,7 +161,7 @@ const TagBlogs = ({ params }: { params: { slug: string } }) => {
                         }}
                      />
                   ) : (
-                     <IcoSearch className="absolute right-8 top-1/2 -translate-y-1/2 text-blog-primary md:right-4" />
+                     <IcoSearch className="absolute right-8 top-1/2 -translate-y-1/2 text-primary md:right-4" />
                   )}
                </div>
             </div>
@@ -173,8 +173,9 @@ const TagBlogs = ({ params }: { params: { slug: string } }) => {
                   key={index}
                   variant="Regular_H6"
                   className={cn(
-                     `cursor-pointer rounded-full capitalize !bg-blog-primary/10 px-4 py-2 !text-blog-primary text-sm md:text-base`,
-                     tagSlug === item?.slug && "!bg-blog-primary !text-white"
+                     `cursor-pointer rounded-full capitalize !bg-primary/10 px-4 py-2 !text-primary text-sm md:text-base`,
+                     tagSlug === item?.slug &&
+                        "!bg-primary !text-primary-foreground"
                   )}
                   onClick={() => setTagSlug(item?.slug as string)}
                >

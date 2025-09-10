@@ -64,8 +64,8 @@ const InstagramSwiper = ({ allPosts }: { allPosts: SanityDocument[] }) => {
                         className="rounded-3xl object-cover"
                      />
                      <span className="instagram-button group absolute inset-0 flex items-center justify-center">
-                        <span className="text-blog-black_ group-hover:text-white">
-                           <IcoInstagram className="text-blog-black_ group-hover:text-blog-primary" />
+                        <span className="text-foreground group-hover:text-primary-foreground">
+                           <IcoInstagram className="text-foreground group-hover:text-primary" />
                         </span>
                      </span>
                   </Link>
@@ -74,10 +74,10 @@ const InstagramSwiper = ({ allPosts }: { allPosts: SanityDocument[] }) => {
          ))}
          {/* Custom navigation buttons */}
          {/* <div className="swiper-button-prev1 hidden sm:block">
-            <IcoSliderLeft className="text-blog-primary" />
+            <IcoSliderLeft className="text-primary" />
          </div>
          <div className="swiper-button-next1 hidden sm:block">
-            <IcoSliderLeft className="rotate-180 text-blog-primary" />
+            <IcoSliderLeft className="rotate-180 text-primary" />
          </div> */}
       </Swiper>
    );

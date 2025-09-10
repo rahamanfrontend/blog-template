@@ -12,13 +12,10 @@ interface IGroupTitle {
 const GroupTitle = ({ title, href, id }: IGroupTitle) => {
    return (
       <div className="pb-8" id={id}>
-         <div className="flex items-center justify-between border-b border-light_stroke pb-4">
+         <div className="flex items-center justify-between border-b border-border pb-4">
             <Typography
                variant="Bold_H3"
-               className={cn(
-                  "text-blog-accent capitalize ",
-                  blogFontConfig.title
-               )}
+               className={cn("text-secondary capitalize ", blogFontConfig.title)}
             >
                {title}
             </Typography>
@@ -27,13 +24,13 @@ const GroupTitle = ({ title, href, id }: IGroupTitle) => {
                   link={href}
                   variant="Medium_H5"
                   className={cn(
-                     "capitalize text-blog-primary hover:text-blog-primary/90 ",
+                     "capitalize text-primary hover:text-primary/90 ",
                      blogFontConfig.subtitle
                   )}
                >
                   View All
                </Typography>
-               <IcoBlogRightArrow className="text-blog-primary hover:text-blog-primary/90" />
+               <IcoBlogRightArrow className="text-primary hover:text-primary/90" />
             </div>
          </div>
       </div>

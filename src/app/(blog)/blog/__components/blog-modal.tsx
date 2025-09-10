@@ -21,8 +21,8 @@ import { siteInfo } from "../__configs/siteInfo";
 import { cn } from "../_libs/utils";
 
 const closeIcon = (
-   <button className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-red-500 p-2 text-xl text-white">
-      <RxCross2 className="text-white md:text-lg" />
+   <button className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-destructive p-2 text-xl text-destructive-foreground">
+      <RxCross2 className="text-destructive-foreground md:text-lg" />
    </button>
 );
 
@@ -102,11 +102,11 @@ const BlogModal = () => {
             }}
             center
             classNames={{
-               modal: "customModal  !z-max",
+               modal: "customModal !min-w-[85%] !p-0 !rounded-lg !max-w-[85%] lg:!min-w-[65%] lg:!max-w-[65%]  !z-max",
             }}
             closeIcon={closeIcon}
          >
-            <div className="relative mx-auto !rounded-3xl bg-white shadow-xl ">
+            <div className="relative mx-auto !rounded-3xl bg-card shadow-xl ">
                <div className="grid !h-full w-full grid-cols-1 gap-10 overflow-hidden md:grid-cols-2">
                   {/* Image container */}
                   <div className="hidden !h-full md:block">
@@ -129,7 +129,7 @@ const BlogModal = () => {
                         <Typography
                            variant="Medium_H3"
                            className={cn(
-                              `${blogFontConfig.title} mt-8 block text-[32px] text-dark_blue_`,
+                              `${blogFontConfig.title} mt-8 block text-[32px] text-foreground`,
                               siteInfo.modalContentTitleClass
                            )}
                         >
@@ -154,7 +154,7 @@ const BlogModal = () => {
                         <div className="!mt-10 flex flex-col items-start ">
                            <input
                               type="email"
-                              className="w-full rounded-full border p-4 outline-none md:w-[360px]"
+                              className="w-full rounded-full border border-input bg-background p-4 outline-none md:w-[360px]"
                               placeholder="Enter your email address"
                               onChange={(e) => setEmail(e.target.value)}
                               onKeyDown={(e) => {
@@ -183,7 +183,7 @@ const BlogModal = () => {
                                        "_blank"
                                     )
                                  }
-                                 className="!w-full lg:w-auto rounded-full bg-blog-primary px-4 sm:px-6 py-3 text-[14px] font-bold text-white duration-500 hover:opacity-90 hover:shadow-lg focus-visible:!outline-none focus-visible:!ring-0 md:px-8 md:text-base"
+                                 className="!w-full lg:w-auto rounded-full bg-primary px-4 sm:px-6 py-3 text-[14px] font-bold text-primary-foreground duration-500 hover:opacity-90 hover:shadow-lg focus-visible:!outline-none focus-visible:!ring-0 md:px-8 md:text-base"
                               />
                               <ButtonSecondary
                                  content={siteInfo.secondaryBtnContent}
@@ -193,13 +193,13 @@ const BlogModal = () => {
                                        "_blank"
                                     )
                                  }
-                                 className="!w-full lg:w-auto rounded-full border border-black bg-transparent px-4 sm:px-6 py-3 text-[14px] font-bold text-black duration-500 hover:!border-primary hover:!bg-white hover:bg-blog-primary hover:!text-blog-primary hover:text-white md:px-8 md:text-base"
+                                 className="!w-full lg:w-auto rounded-full border border-border bg-transparent px-4 sm:px-6 py-3 text-[14px] font-bold text-foreground duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground md:px-8 md:text-base"
                               />
                            </div>
                            <div className="mt-5 flex items-center group justify-start gap-1">
                               <Typography
                                  variant="Medium_H5"
-                                 className="block cursor-pointer text-blog-discover  hover:text-blog-primary underline"
+                                 className="block cursor-pointer text-muted-foreground hover:text-primary underline"
                                  onClick={() => {
                                     setIsSuccessOpen(false);
                                     router.push("/blog");
@@ -207,7 +207,7 @@ const BlogModal = () => {
                               >
                                  Discover Blogs
                               </Typography>
-                              <IcoArrowRight className="text-blog-discover group-hover:text-blog-primary" />
+                              <IcoArrowRight className="text-muted-foreground group-hover:text-primary" />
                            </div>
                         </div>
                      )}

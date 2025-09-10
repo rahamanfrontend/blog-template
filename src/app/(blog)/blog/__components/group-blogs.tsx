@@ -102,10 +102,10 @@ const GroupedBlogs = ({ groupName, categoryName, id }: GroupedBlogsProps) => {
             ))}
             {/* Custom navigation buttons */}
             {/* <div className="swiper-button-prev1">
-               <IcoSliderLeft className="text-blog-primary" />
+               <IcoSliderLeft className="text-primary" />
             </div>
             <div className="swiper-button-next1">
-               <IcoSliderLeft className="rotate-180 text-blog-primary" />
+               <IcoSliderLeft className="rotate-180 text-primary" />
             </div> */}
          </Swiper>
       </div>

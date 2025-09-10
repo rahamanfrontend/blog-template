@@ -199,7 +199,7 @@ const GroupedBasedBlogSlider = ({
                   variant="Medium_H2"
                   className={cn(
                      blogFontConfig.title,
-                     `text-dark_blue_ text-center`
+                     `text-foreground text-center`
                   )}
                >
                   {siteInfo.title}
@@ -208,7 +208,7 @@ const GroupedBasedBlogSlider = ({
                   variant="Regular_H6"
                   className={cn(
                      blogFontConfig.subtitle,
-                     `text-blog-dark_gray text-center`
+                     `text-muted-foreground text-center`
                   )}
                >
                   {siteInfo.description}
@@ -217,7 +217,7 @@ const GroupedBasedBlogSlider = ({
                   {/* first component  */}
                   <div className="relative mt-4 w-full md:w-[400px]">
                      <Input
-                        className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-light_gray focus:!outline-primary focus-visible:!outline-primary"
+                        className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-muted-foreground focus:!outline-primary focus-visible:!outline-primary"
                         placeholder="Search yoga tips, poses, or articles..."
                         value={searchString}
                         onChange={(e) => setSearchString(e.target.value)}
@@ -230,7 +230,7 @@ const GroupedBasedBlogSlider = ({
                            }}
                         />
                      ) : (
-                        <IcoSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-blog-primary" />
+                        <IcoSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-primary" />
                      )}
                   </div>
                   <AllTags
@@ -261,21 +261,21 @@ const GroupedBasedBlogSlider = ({
                                 .map((_, index) => (
                                    <div
                                       key={`placeholder-${index}`}
-                                      className="overflow-hidden !rounded-2xl !border !border-[#E4E4E7]"
+                                      className="overflow-hidden !rounded-2xl !border !border-border"
                                    >
                                       <div className="relative aspect-[1.36] w-full">
-                                         <div className="h-[220px] w-full animate-pulse bg-gray-200"></div>
+                                         <div className="h-[220px] w-full animate-pulse bg-muted"></div>
                                       </div>
                                       <div className="flex flex-col gap-2 px-8 py-6">
-                                         <div className="h-6 w-24 animate-pulse rounded-full bg-gray-200"></div>
-                                         <div className="mb-2 h-7 w-full animate-pulse rounded bg-gray-200"></div>
-                                         <div className="h-5 w-3/4 animate-pulse rounded bg-gray-200"></div>
+                                         <div className="h-6 w-24 animate-pulse rounded-full bg-muted"></div>
+                                         <div className="mb-2 h-7 w-full animate-pulse rounded bg-muted"></div>
+                                         <div className="h-5 w-3/4 animate-pulse rounded bg-muted"></div>
                                       </div>
                                       <div className="flex items-center gap-4 px-8 pb-6">
-                                         <div className="h-[60px] w-[60px] animate-pulse rounded-full bg-gray-200"></div>
+                                         <div className="h-[60px] w-[60px] animate-pulse rounded-full bg-muted"></div>
                                          <div>
-                                            <div className="mb-2 h-5 w-32 animate-pulse rounded bg-gray-200"></div>
-                                            <div className="h-4 w-24 animate-pulse rounded bg-gray-200"></div>
+                                            <div className="mb-2 h-5 w-32 animate-pulse rounded bg-muted"></div>
+                                            <div className="h-4 w-24 animate-pulse rounded bg-muted"></div>
                                          </div>
                                       </div>
                                    </div>
@@ -304,21 +304,21 @@ const GroupedBasedBlogSlider = ({
                               .map((_, index) => (
                                  <div
                                     key={`recent-placeholder-${index}`}
-                                    className="overflow-hidden !rounded-2xl !border !border-[#E4E4E7]"
+                                    className="overflow-hidden !rounded-2xl !border !border-border"
                                  >
                                     <div className="relative aspect-[1.36] w-full">
-                                       <div className="h-[220px] w-full animate-pulse bg-gray-200"></div>
+                                       <div className="h-[220px] w-full animate-pulse bg-muted"></div>
                                     </div>
                                     <div className="flex flex-col gap-2 px-8 py-6">
-                                       <div className="h-6 w-24 animate-pulse rounded-full bg-gray-200"></div>
-                                       <div className="mb-2 h-7 w-full animate-pulse rounded bg-gray-200"></div>
-                                       <div className="h-5 w-3/4 animate-pulse rounded bg-gray-200"></div>
+                                       <div className="h-6 w-24 animate-pulse rounded-full bg-muted"></div>
+                                       <div className="mb-2 h-7 w-full animate-pulse rounded bg-muted"></div>
+                                       <div className="h-5 w-3/4 animate-pulse rounded bg-muted"></div>
                                     </div>
                                     <div className="flex items-center gap-4 px-8 pb-6">
-                                       <div className="h-[60px] w-[60px] animate-pulse rounded-full bg-gray-200"></div>
+                                       <div className="h-[60px] w-[60px] animate-pulse rounded-full bg-muted"></div>
                                        <div>
-                                          <div className="mb-2 h-5 w-32 animate-pulse rounded bg-gray-200"></div>
-                                          <div className="h-4 w-24 animate-pulse rounded bg-gray-200"></div>
+                                          <div className="mb-2 h-5 w-32 animate-pulse rounded bg-muted"></div>
+                                          <div className="h-4 w-24 animate-pulse rounded bg-muted"></div>
                                        </div>
                                     </div>
                                  </div>
@@ -351,10 +351,10 @@ const GroupedBasedBlogSlider = ({
                               </SwiperSlide>
                            ))}
                            {/* <div className="swiper-button-prev1">
-                              <IcoSliderLeft className="text-blog-primary" />
+                              <IcoSliderLeft className="text-primary" />
                            </div>
                            <div className="swiper-button-next1">
-                              <IcoSliderLeft className="rotate-180 text-blog-primary" />
+                              <IcoSliderLeft className="rotate-180 text-primary" />
                            </div> */}
                         </Swiper>
                      )}
@@ -372,8 +372,8 @@ const GroupedBasedBlogSlider = ({
                      ) : (
                         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                            <div className="mb-6 flex items-center justify-between">
-                              <div className="h-8 w-48 animate-pulse rounded bg-gray-200"></div>
-                              <div className="h-6 w-24 animate-pulse rounded bg-gray-200"></div>
+                              <div className="h-8 w-48 animate-pulse rounded bg-muted"></div>
+                              <div className="h-6 w-24 animate-pulse rounded bg-muted"></div>
                            </div>
                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                               {Array(3)
@@ -381,7 +381,7 @@ const GroupedBasedBlogSlider = ({
                                  .map((_, idx) => (
                                     <div
                                        key={`cat-placeholder-${idx}`}
-                                       className="h-[350px] animate-pulse rounded-lg bg-gray-200"
+                                       className="h-[350px] animate-pulse rounded-lg bg-muted"
                                     ></div>
                                  ))}
                            </div>

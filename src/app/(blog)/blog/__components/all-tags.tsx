@@ -21,7 +21,7 @@ const AllTags = ({
             const tags = await getAllTags();
             setTags(tags);
             setLoader(false);
-         } catch (err) {
+         } catch {
             setLoader(false);
          } finally {
             setLoader(false);
@@ -47,7 +47,7 @@ const AllTags = ({
                      .map((_, index) => (
                         <div
                            key={`tag-placeholder-${index}`}
-                           className="h-8 w-20 animate-pulse rounded-full bg-blog-primary/10 sm:h-10 sm:w-28"
+                           className="h-8 w-20 animate-pulse rounded-full bg-primary/10 sm:h-10 sm:w-28"
                         />
                      ))}
                </div>
@@ -60,9 +60,9 @@ const AllTags = ({
                               key={index}
                               variant="Regular_H6"
                               className={cn(
-                                 `cursor-pointer rounded-full bg-blog-primary/10 px-3 py-1.5 text-blog-primary capitalize !text-base md:!text-base sm:px-4 sm:py-2`,
+                                 `cursor-pointer rounded-full bg-primary/10 px-3 py-1.5 text-primary capitalize !text-base md:!text-base sm:px-4 sm:py-2`,
                                  item?.slug === selectedTag &&
-                                    "bg-blog-primary !text-white"
+                                    "bg-primary !text-primary-foreground"
                               )}
                               onClick={() => {
                                  if (selectedTag === item?.slug) {

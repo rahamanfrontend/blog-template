@@ -73,12 +73,12 @@ const RelatedBlogs = ({
    }, [query, categoryName, currentBlogId]);
 
    return (
-      <div className="w-full cursor-pointer rounded-2xl border border-[#E4E4E7] bg-[#FAFAFA] px-4 sm:px-6 py-6 sm:py-8 lg:w-[445px]">
+      <div className="w-full cursor-pointer rounded-2xl border border-border bg-card px-4 sm:px-6 py-6 sm:py-8 lg:w-[445px]">
          <Typography
             variant="Medium_H4"
             className={cn(
                blogFontConfig.title,
-               "mb-6 block font-medium text-blog-gray_1"
+               "mb-6 block font-medium text-foreground"
             )}
          >
             Related Blogs & Articles
@@ -90,19 +90,19 @@ const RelatedBlogs = ({
                   onClick={() => {
                      router.push(`/blog/${item?.slug?.current}`);
                   }}
-                  className="group flex !w-full items-center justify-between gap-2 rounded-xl border border-[#E4E4E7] bg-[#FFFFFF] px-3 sm:px-4 py-2 sm:py-3"
+                  className="group flex !w-full items-center justify-between gap-2 rounded-xl border border-border bg-background px-3 sm:px-4 py-2 sm:py-3"
                >
                   <Typography
                      variant="Regular_H6"
                      className={cn(
                         blogFontConfig.subtitle,
-                        "line-clamp-2 text-blog-accent group-hover:!text-blog-primary lg:!w-auto text-sm sm:text-base"
+                        "line-clamp-2 text-foreground group-hover:!text-primary lg:!w-auto text-sm sm:text-base"
                      )}
                   >
                      {item?.title}
                   </Typography>
                   <div className="size-4 sm:size-5">
-                     <IcoDoubleArrowRight className="text-blog-primary group-hover:text-blog-primary" />
+                     <IcoDoubleArrowRight className="text-primary group-hover:text-primary" />
                   </div>
                </div>
             ))}

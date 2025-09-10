@@ -1,6 +1,5 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
 import { Typography } from "./ui/Typography";
 import { cn } from "../_libs/utils";
 import Image from "next/image";
@@ -51,12 +50,12 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
          href={`/blog/${data?.slug?.current || ""}`}
          className="cursor-pointer"
       >
-         <div className="overflow-hidden !rounded-2xl !border !border-[#E4E4E7]">
+         <div className="overflow-hidden !rounded-2xl !border !border-border">
             <div className="relative w-full">
                {/* Image with blur loading effect */}
                <div
                   className={`absolute inset-0 transition-all duration-500 ${
-                     isImageLoaded ? "opacity-0" : "animate-pulse bg-gray-200"
+                     isImageLoaded ? "opacity-0" : "animate-pulse bg-muted"
                   }`}
                />
 
@@ -81,7 +80,7 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
                   <Link
                      href={`/blog/category/${data.category.slug}`}
                      className={cn(
-                        "!mr-auto !inline-block cursor-pointer items-center  justify-center gap-2 rounded-full !bg-blog-primary/10 px-3 py-1.5 sm:py-2 capitalize !text-blog-primary",
+                        "!mr-auto !inline-block cursor-pointer items-center  justify-center gap-2 rounded-full !bg-primary/10 px-3 py-1.5 sm:py-2 capitalize !text-primary",
                         poppins.className
                      )}
                   >
@@ -92,9 +91,9 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
                   <Typography
                      className={cn(
                         blogFontConfig.title,
-                        "!mt-1 line-clamp-2 !font-medium text-blog-accent"
+                        "!mt-1 line-clamp-2 !font-medium text-foreground"
                      )}
-                     variant="Medium_H4"
+                     variant="Medium_H5"
                   >
                      {data.title || "Blog Post"}
                   </Typography>
@@ -104,7 +103,7 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
                      variant="Regular_H6"
                      className={cn(
                         blogFontConfig.subtitle,
-                        "line-clamp-2 !leading-snug !text-blog-info md:!leading-snug"
+                        "line-clamp-2 !leading-snug !text-muted-foreground md:!leading-snug"
                      )}
                   >
                      {data.subtitle}
@@ -131,7 +130,7 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
                                     variant="Regular_H6"
                                     className={cn(
                                        blogFontConfig.subtitle,
-                                       "!text-blog-primary hover:!text-blog-primary"
+                                       "!text-primary hover:!text-primary"
                                     )}
                                     data-text={data.author.author_name}
                                  >
@@ -147,15 +146,15 @@ const BlogCard = ({ data }: { data: BlogCardData }) => {
                      {data.date && (
                         <Typography
                            variant="Regular_H6"
-                           className="!text-[13px] text-blog-chips"
+                           className="!text-[13px] text-muted-foreground"
                         >
                            {formatISODate(data.date)}
                         </Typography>
                      )}
-                     <div className="size-1 min-h-1 min-w-1 rounded-full bg-blog-chips"></div>
+                     <div className="size-1 min-h-1 min-w-1 rounded-full bg-muted-foreground"></div>
                      <Typography
                         variant="Regular_H6"
-                        className="!text-[13px] text-blog-chips"
+                        className="!text-[13px] text-muted-foreground"
                      >
                         {data?.read_time || "5"} min read
                      </Typography>

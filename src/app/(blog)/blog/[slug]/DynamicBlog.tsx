@@ -30,7 +30,6 @@ import { Typography } from "../__components/ui/Typography";
 import { POSTS_QUERY } from "../__configs/dyanamic_queries";
 
 export default async function DynamicBlog({ postData }: any) {
-   
    // Early return if postData is undefined or null
    if (!postData) {
       return <ArticleSkeleton />;
@@ -112,7 +111,7 @@ export default async function DynamicBlog({ postData }: any) {
                   />
                </div>
             </div>
-            <div className="single-related-blog-trimuk !bg-blog-primary/10">
+            <div className="single-related-blog-trimuk !bg-primary/10">
                <div className="!mx-auto px-3 lg:!max-w-7xl lg:px-0">
                   <InstagramOne parentClass="lg:block" />
                </div>

@@ -25,13 +25,13 @@ const Head: FC<HeadProps> = memo(
       return (
          <section
             className={cn(
-               "relative overflow-hidden bg-black py-12 sm:py-20 lg:py-40"
+               "relative overflow-hidden bg-background py-12 sm:py-20 lg:py-40"
             )}
          >
             <div className="absolute inset-0">
                {/* Skeleton loader */}
                <div
-                  className={`absolute inset-0 bg-gradient-to-r from-[#451000]/70 to-[#451000]/30 animate-pulse transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-gradient-to-r from-primary/70 to-primary/30 animate-pulse transition-opacity duration-500 ${
                      isImageLoaded ? "opacity-0" : "opacity-100"
                   }`}
                />
@@ -58,13 +58,13 @@ const Head: FC<HeadProps> = memo(
                />
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-r from-[#451000] from-10% via-80% to-transparent to-70%"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-primary from-10% via-80% to-transparent to-70%"></div>
 
             <div className="relative mx-auto max-w-7xl px-4 capitalize sm:px-6 lg:px-8">
                <div>
                   <Typography
                      variant="Medium_H1"
-                     className={`${blogFontConfig.title} block leading-tight text-white`}
+                     className={`${blogFontConfig.title} block leading-tight text-primary-foreground`}
                   >
                      {heading}
                   </Typography>
@@ -72,20 +72,20 @@ const Head: FC<HeadProps> = memo(
                      <Typography
                         variant="Regular_H5"
                         link="/"
-                        className="text-white"
+                        className="text-primary-foreground"
                      >
                         Home .
                      </Typography>
                      <Typography
                         variant="Regular_H5"
-                        className="ml-2 cursor-pointer text-white"
+                        className="ml-2 cursor-pointer text-primary-foreground"
                      >
                         {subHeading} {children_heading && "."}
                      </Typography>
                      {children_heading && (
                         <Typography
                            variant="Regular_H5"
-                           className="ml-2 cursor-pointer text-white"
+                           className="ml-2 cursor-pointer text-primary-foreground"
                         >
                            {children_heading}
                         </Typography>

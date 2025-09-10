@@ -29,10 +29,10 @@ const PostAuthor = ({ dataAuthor }: any) => {
          >
             About the author
          </Typography>
-         <div className="w-full rounded-xl sm:rounded-2xl border border-[#E4E4E7] bg-[#fafafa] p-4 sm:p-6 lg:p-8">
+         <div className="w-full rounded-xl sm:rounded-2xl border border-border bg-card p-4 sm:p-6 lg:p-8">
             <div className="post-meta-wrapper !flex !flex-col justify-center lg:justify-between lg:items-center lg:!flex-row">
                <div className="post-meta flex flex-col items-center lg:flex-row lg:items-start gap-3 sm:gap-4">
-                  <div className="post-author-avatar rounded-full border-none border-gray-200">
+                  <div className="post-author-avatar rounded-full border-none border-border">
                      <Image
                         src={dataAuthor?.author?.author_img}
                         alt={dataAuthor?.author?.author_name}
@@ -42,17 +42,17 @@ const PostAuthor = ({ dataAuthor }: any) => {
                      />
                   </div>
                   <div className="content flex flex-col items-center lg:items-start">
-                     <h6 className="post-author-name">
-                        <Link
-                           href={`/blog/author/${dataAuthor?.author?.username}`}
-                        >
-                           <span className="hover-flip-item-wrapper">
+                     <Link
+                        href={`/blog/author/${dataAuthor?.author?.username}`}
+                     >
+                        <h6 className="post-author-name">
+                           <span className="hover-flip-item-wrapper ">
                               <span className="hover-flip-item">
                                  <Typography
                                     variant="Medium_H4"
                                     className={cn(
                                        blogFontConfig.subtitle,
-                                       "text-[18px] sm:text-[20px] lg:text-[22px]"
+                                       "text-[18px] sm:text-[20px] lg:text-[22px] !text-primary"
                                     )}
                                     data-text={dataAuthor?.author?.author_name}
                                  >
@@ -60,13 +60,13 @@ const PostAuthor = ({ dataAuthor }: any) => {
                                  </Typography>
                               </span>
                            </span>
-                        </Link>
-                     </h6>
+                        </h6>
+                     </Link>
                      <Typography
                         variant="Regular_H6"
                         className={cn(
                            blogFontConfig.subtitle,
-                           "text-blog-chips text-center lg:text-left text-sm sm:text-base"
+                           "text-muted-foreground text-center lg:text-left text-sm sm:text-base"
                         )}
                      >
                         {dataAuthor?.author?.author_designation}
@@ -98,14 +98,14 @@ const PostAuthor = ({ dataAuthor }: any) => {
                      onClick={() =>
                         window.open(siteInfo.primaryBtnLink, "_blank")
                      }
-                     className="w-full sm:w-auto rounded-full bg-blog-primary px-4 py-2 text-center text-[12px] sm:text-[14px] font-bold text-white duration-500 hover:opacity-90 hover:shadow-lg sm:px-6 sm:py-3 md:px-8 md:text-base"
+                     className="w-full sm:w-auto rounded-full bg-primary px-4 py-2 text-center text-[12px] sm:text-[14px] font-bold text-primary-foreground duration-500 hover:opacity-90 hover:shadow-lg sm:px-6 sm:py-3 md:px-8 md:text-base"
                   />
                   <ButtonSecondary
                      content={siteInfo.secondaryBtnContent}
                      onClick={() =>
                         window.open(siteInfo.secondaryBtnLink, "_blank")
                      }
-                     className="w-full sm:w-auto rounded-full border border-black bg-transparent px-4 py-2 text-center text-[12px] sm:text-[14px] font-bold text-black duration-500 hover:!border-blog-primary hover:!text-blog-primary hover:!bg-transparent sm:px-6 sm:py-3 md:px-8 md:text-base"
+                     className="w-full sm:w-auto rounded-full border border-border bg-transparent px-4 py-2 text-center text-[12px] sm:text-[14px] font-bold text-foreground duration-500 hover:!border-primary hover:!text-primary hover:!bg-transparent sm:px-6 sm:py-3 md:px-8 md:text-base"
                   />
                </div>
                <div className="flex items-center justify-center sm:justify-start gap-1 text-nowrap">
@@ -114,7 +114,7 @@ const PostAuthor = ({ dataAuthor }: any) => {
                      variant="Medium_H5"
                      className={cn(
                         blogFontConfig.title,
-                        "block cursor-pointer text-blog-discover underline text-sm sm:text-base"
+                        "block cursor-pointer text-muted-foreground hover:text-primary underline text-sm sm:text-base"
                      )}
                   >
                      Discover Blogs

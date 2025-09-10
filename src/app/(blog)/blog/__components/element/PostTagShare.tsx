@@ -34,7 +34,7 @@ const PostTagShare = ({ postTags }: any) => {
                      key={index}
                      className=""
                   >
-                     <span className="m-1.5 rounded-lg border border-blog-primary bg-blog-primary px-5 py-2 text-sm font-semibold capitalize text-white transition-colors duration-300 hover:bg-opacity-90">
+                     <span className="m-1.5 rounded-lg border border-primary bg-primary px-5 py-2 text-sm font-semibold capitalize text-primary-foreground transition-colors duration-300 hover:bg-opacity-90">
                         <span data-text={data}>{data.name}</span>
                      </span>
                   </Link>
@@ -50,7 +50,7 @@ const PostTagShare = ({ postTags }: any) => {
                <li>
                   <Link
                      href="https://facebook.com/"
-                     className="hover:text-facebook items-center border-[1px] !bg-transparent p-3 text-gray-600 transition-colors duration-300"
+                     className="hover:text-primary items-center border-[1px] border-border !bg-transparent p-3 text-muted-foreground transition-colors duration-300"
                   >
                      <ThumbsUp />
                   </Link>
@@ -62,7 +62,7 @@ const PostTagShare = ({ postTags }: any) => {
                <li>
                   <Link
                      href="https://facebook.com/"
-                     className="icon-rounded-transparent md-size hover:text-facebook p-3 text-gray-600 transition-colors duration-300"
+                     className="icon-rounded-transparent md-size hover:text-primary p-3 text-muted-foreground transition-colors duration-300"
                   >
                      <Facebook />
                   </Link>
@@ -70,7 +70,7 @@ const PostTagShare = ({ postTags }: any) => {
                <li>
                   <Link
                      href="https://instagram.com"
-                     className="icon-rounded-transparent md-size hover:text-instagram p-3.5 text-gray-600 transition-colors duration-300"
+                     className="icon-rounded-transparent md-size hover:text-primary p-3.5 text-muted-foreground transition-colors duration-300"
                   >
                      <Instagram />
                   </Link>
@@ -78,7 +78,7 @@ const PostTagShare = ({ postTags }: any) => {
                <li>
                   <Link
                      href="https://twitter.com"
-                     className="icon-rounded-transparent md-size hover:text-twitter p-3.5 text-gray-600 transition-colors duration-300"
+                     className="icon-rounded-transparent md-size hover:text-primary p-3.5 text-muted-foreground transition-colors duration-300"
                   >
                      <Twitter />
                   </Link>
@@ -86,7 +86,7 @@ const PostTagShare = ({ postTags }: any) => {
                <li>
                   <Link
                      href="https://linkedin.com"
-                     className="icon-rounded-transparent md-size hover:text-linkedin p-3.5 text-gray-600 transition-colors duration-300"
+                     className="icon-rounded-transparent md-size hover:text-primary p-3.5 text-muted-foreground transition-colors duration-300"
                   >
                      <Linkedin />
                   </Link>

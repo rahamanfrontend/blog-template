@@ -13,10 +13,10 @@ import IcoInstagram from "../../__icons/IcoInstagram";
 import { blogFontConfig } from "../../__configs/font";
 
 export const socialIcons = {
-   facebook: <IcoFacebook className="text-blog-primary" />,
-   youtube: <IcoYoutube className="text-blog-primary" />,
-   linkedin: <IcoLinkedin className="text-blog-primary" />,
-   instagram: <IcoInstagram className="text-blog-primary" />,
+   facebook: <IcoFacebook className="text-primary" />,
+   youtube: <IcoYoutube className="text-primary" />,
+   linkedin: <IcoLinkedin className="text-primary" />,
+   instagram: <IcoInstagram className="text-primary" />,
 };
 // @ts-ignore
 const PostMetaTwo = ({ metaData }: any) => {
@@ -38,7 +38,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                                  href={`/blog/category/${metaData?.category?.slug}`}
                                  prefetch={true}
                               >
-                                 <span className="text-white_ peacockGradient btnHover mt-3 w-fit rounded-full  py-1 text-base font-normal capitalize transition-all duration-300 lg:mt-5">
+                                 <span className="text-primary-foreground  btnHover mt-3 w-fit rounded-full  py-1 text-base font-normal capitalize transition-all duration-300 lg:mt-5">
                                     <span
                                        className={cn(blogFontConfig.subtitle)}
                                        data-text={metaData.category?.name}
@@ -47,7 +47,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                                           variant={"Regular_H6"}
                                           className={cn(
                                              blogFontConfig.subtitle,
-                                             " !mr-auto !inline-block items-center justify-center gap-2 rounded-full bg-blog-primary/10 px-3 py-1 capitalize text-blog-primary"
+                                             " !mr-auto !inline-block items-center justify-center gap-2 rounded-full bg-primary/10 px-3 py-1 capitalize text-primary"
                                           )}
                                        >
                                           {metaData.category?.name}
@@ -59,7 +59,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                         </div>
                         <h1
                            className={cn(
-                              "!mb-4 block mt-5 font-bold  text-blog-black_",
+                              "!mb-4 block mt-5 font-bold  text-secondary",
                               blogFontConfig.title
                            )}
                            style={{
@@ -68,7 +68,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                         >
                            <Typography
                               variant="Medium_H3"
-                              className="!leading-6 md:!leading-[56px]"
+                              className="!leading-6 md:!leading-[56px]  "
                            >
                               {metaData?.title}
                            </Typography>
@@ -77,11 +77,14 @@ const PostMetaTwo = ({ metaData }: any) => {
                            <h2>
                               <span
                                  className={cn(
-                                    "text-xl font-medium !text-blog-info",
+                                    "text-xl font-medium ",
                                     blogFontConfig.subtitle
                                  )}
                               >
-                                 <Typography variant="Medium_H5">
+                                 <Typography
+                                    variant="Medium_H5"
+                                    className="!text-muted-foreground"
+                                 >
                                     {metaData.subtitle}
                                  </Typography>
                               </span>
@@ -95,23 +98,23 @@ const PostMetaTwo = ({ metaData }: any) => {
                            )}
                         >
                            <Typography
-                              className="cursor-pointer  text-dark_gray hover:text-blog-primary "
+                              className="cursor-pointer  text-muted-foreground hover:text-primary "
                               variant="Regular_H6"
                               link="/"
                            >
                               Home
                            </Typography>
-                           <div className="!size-1 min-h-1 min-w-1 !rounded-full !bg-blog-chips"></div>
+                           <div className="!size-1 min-h-1 min-w-1 !rounded-full !bg-muted-foreground"></div>
                            <Typography
                               variant="Regular_H6"
-                              className="cursor-pointer  text-dark_gray hover:text-blog-primary "
+                              className="cursor-pointer  text-muted-foreground hover:text-primary "
                               link="/blog"
                            >
                               Blog
                            </Typography>
-                           <div className="!size-1 min-h-1 min-w-1 !rounded-full !bg-blog-chips"></div>
+                           <div className="!size-1 min-h-1 min-w-1 !rounded-full !bg-muted-foreground"></div>
                            <Typography
-                              className="cursor-pointer !text-blog-primary  hover:!text-blog-primary/80"
+                              className="cursor-pointer !text-primary  hover:!text-primary/80"
                               variant="Regular_H6"
                               link="/"
                            >
@@ -131,9 +134,9 @@ const PostMetaTwo = ({ metaData }: any) => {
                         </div>
 
                         {/* Post Meta */}
-                        <div className="post-meta-wrapper border-b-[2px] border-gray-300 py-8 !pb-6">
+                        <div className="post-meta-wrapper border-b-[2px] border-border py-8 !pb-6">
                            <div className="post-meta">
-                              <div className="post-author-avatar rounded-full border-none border-gray-200">
+                              <div className="post-author-avatar rounded-full border-none border-border">
                                  <Image
                                     src={metaData?.author?.author_img}
                                     alt={metaData?.author?.author_name}
@@ -143,17 +146,17 @@ const PostMetaTwo = ({ metaData }: any) => {
                                  />
                               </div>
                               <div className="content">
-                                 <h6 className="post-author-name">
-                                    <Link
-                                       href={`/blog/author/${metaData?.author?.username}`}
-                                    >
+                                 <Link
+                                    href={`/blog/author/${metaData?.author?.username}`}
+                                 >
+                                    <h6 className="post-author-name">
                                        <span className="hover-flip-item-wrapper">
                                           <span className="hover-flip-item">
                                              <Typography
                                                 variant="Regular_H5"
                                                 className={cn(
                                                    blogFontConfig.subtitle,
-                                                   "text-blog-gray_1"
+                                                   "!text-primary"
                                                 )}
                                                 data-text={
                                                    metaData?.author?.author_name
@@ -163,13 +166,13 @@ const PostMetaTwo = ({ metaData }: any) => {
                                              </Typography>
                                           </span>
                                        </span>
-                                    </Link>
-                                 </h6>
+                                    </h6>
+                                 </Link>
                                  <ul className="post-meta-list">
                                     <li
                                        className={cn(
                                           blogFontConfig.subtitle,
-                                          "text-base !text-blog-chips"
+                                          "text-base !text-muted-foreground"
                                        )}
                                     >
                                        {metaData.date}
@@ -177,7 +180,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                                     <li
                                        className={cn(
                                           blogFontConfig.subtitle,
-                                          "text-base !text-blog-chips"
+                                          "text-base !text-muted-foreground"
                                        )}
                                     >
                                        {metaData.read_time} min read
@@ -185,7 +188,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                                     <li
                                        className={cn(
                                           blogFontConfig.subtitle,
-                                          "text-base !text-blog-chips"
+                                          "text-base !text-muted-foreground"
                                        )}
                                     >
                                        {metaData.post_views} views

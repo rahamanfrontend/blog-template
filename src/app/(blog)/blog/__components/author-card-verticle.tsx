@@ -19,10 +19,10 @@ const AuthorCardVerticle = ({ dataAuthor }: any) => {
    console.log({ socialMedia, socialKeys });
    return (
       <div className="w-full px-4 sm:px-5 lg:sticky lg:top-28 lg:mb-10 lg:px-0">
-         <div className="w-full rounded-2xl border border-[#E4E4E7] bg-[#fafafa] p-4 sm:p-6 md:p-8">
+         <div className="w-full rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-8">
             <div className="post-meta-wrapper">
                <div className="post-meta flex flex-col items-center gap-3 sm:flex-row sm:items-start">
-                  <div className="post-author-avatar rounded-full border-none border-gray-200">
+                  <div className="post-author-avatar rounded-full border-none border-border">
                      <Image
                         src={dataAuthor?.author?.author_img}
                         alt={dataAuthor?.author?.author_name}
@@ -42,7 +42,7 @@ const AuthorCardVerticle = ({ dataAuthor }: any) => {
                                     variant="Regular_H4"
                                     className={cn(
                                        blogFontConfig.subtitle,
-                                       "!text-blog-gray_1"
+                                       "!text-foreground"
                                     )}
                                     data-text={dataAuthor?.author?.author_name}
                                  >
@@ -56,7 +56,7 @@ const AuthorCardVerticle = ({ dataAuthor }: any) => {
                         variant="Regular_H6"
                         className={cn(
                            blogFontConfig.subtitle,
-                           "text-blog-chips"
+                           "text-muted-foreground"
                         )}
                      >
                         {dataAuthor?.author?.author_designation}
@@ -91,14 +91,14 @@ const AuthorCardVerticle = ({ dataAuthor }: any) => {
                <ButtonPrimary
                   content={siteInfo.primaryBtnContent}
                   onClick={() => window.open(siteInfo.primaryBtnLink, "_blank")}
-                  className="w-full rounded-full bg-blog-primary px-4 py-2.5 text-[13px] font-bold text-white duration-500 hover:opacity-90 hover:shadow-lg sm:w-auto sm:px-6 sm:py-3 sm:text-[14px] md:px-8 md:text-base"
+                  className="w-full rounded-full bg-primary px-4 py-2.5 text-[13px] font-bold text-primary-foreground duration-500 hover:opacity-90 hover:shadow-lg sm:w-auto sm:px-6 sm:py-3 sm:text-[14px] md:px-8 md:text-base"
                />
                <ButtonSecondary
                   content={siteInfo.secondaryBtnContent}
                   onClick={() =>
                      window.open(siteInfo.secondaryBtnLink, "_blank")
                   }
-                  className="w-full rounded-full border border-black bg-transparent px-4 py-2.5 text-[13px] font-bold text-black duration-500 hover:!border-primary hover:!bg-white hover:bg-blog-primary hover:!text-blog-primary hover:text-white sm:w-auto sm:px-6 sm:py-3 sm:text-[14px] md:px-8 md:text-base"
+                  className="w-full rounded-full border border-border bg-transparent px-4 py-2.5 text-[13px] font-bold text-foreground duration-500 hover:border-primary hover:bg-primary hover:text-primary-foreground sm:w-auto sm:px-6 sm:py-3 sm:text-[14px] md:px-8 md:text-base"
                />
             </div>
 

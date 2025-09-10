@@ -117,7 +117,7 @@ const CategoryBlogs = ({ params }: { params: { slug: string } }) => {
                   variant="Medium_H2"
                   className={cn(
                      blogFontConfig.title,
-                     `text-center capitalize text-dark_blue_`
+                     `text-center capitalize text-foreground`
                   )}
                >
                   {
@@ -130,14 +130,14 @@ const CategoryBlogs = ({ params }: { params: { slug: string } }) => {
                   variant="Regular_H6"
                   className={cn(
                      blogFontConfig.subtitle,
-                     `text-center text-blog-dark_gray`
+                     `text-center text-muted-foreground`
                   )}
                >
                   {siteInfo.description}
                </Typography>
                <div className="mb- relative mt-4 w-full md:w-[400px]">
                   <Input
-                     className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-light_gray focus:!outline-primary focus-visible:!outline-primary"
+                     className="w-full rounded-[4px] px-[14px] py-3 pr-10 placeholder:text-muted-foreground focus:!outline-primary focus-visible:!outline-primary"
                      placeholder="Search yoga tips, poses, or articles..."
                      value={searchString}
                      onChange={(e) => setSearchString(e.target.value)}
@@ -150,7 +150,7 @@ const CategoryBlogs = ({ params }: { params: { slug: string } }) => {
                         }}
                      />
                   ) : (
-                     <IcoSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-blog-primary" />
+                     <IcoSearch className="absolute right-4 top-1/2 -translate-y-1/2 text-primary" />
                   )}
                </div>
             </div>

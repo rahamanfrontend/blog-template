@@ -17,7 +17,7 @@ const PostFormatAudio = ({ postData, allData }: any) => {
 
    return (
       <>
-         <div className="post-single-wrapper bg-white py-8">
+         <div className="post-single-wrapper bg-background py-8">
             <div className="justify-center">
                <div className="flex flex-wrap justify-between gap-y-12">
                   <div className="!w-full">

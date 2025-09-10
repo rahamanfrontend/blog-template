@@ -102,25 +102,28 @@ const TrimukBlog = () => {
             <div className="flex flex-col items-center justify-center gap-4">
                <Typography
                   variant="Medium_H2"
-                  className={cn(blogFontConfig.title, `text-dark_blue_`)}
+                  className={cn(blogFontConfig.title, `text-foreground`)}
                >
                   Recent Articles
                </Typography>
                <Typography
                   variant="Regular_H6"
-                  className={cn(blogFontConfig.subtitle, `text-blog-dark_gray`)}
+                  className={cn(
+                     blogFontConfig.subtitle,
+                     `text-muted-foreground`
+                  )}
                >
                   Discover yoga, wellness, and mindful living with inspiring
                   insights and practical tips.
                </Typography>
                <div className="mb- relative mt-4">
                   <Input
-                     className="w-3/5 rounded-[4px] px-[14px] py-3 placeholder:text-light_gray focus:!outline-primary  focus-visible:!outline-primary  md:w-[400px]"
+                     className="w-3/5 rounded-[4px] px-[14px] py-3 placeholder:text-muted-foreground focus:!outline-primary  focus-visible:!outline-primary  md:w-[400px]"
                      placeholder="Search yoga tips, poses, or articles..."
                      value={searchString}
                      onChange={(e) => setSearchString(e.target.value)}
                   />
-                  <IcoSearch className="absolute right-4  text-blog-primary top-1/2 -translate-y-1/2" />
+                  <IcoSearch className="absolute right-4  text-primary top-1/2 -translate-y-1/2" />
                </div>
             </div>
          </div>
