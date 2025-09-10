@@ -1,0 +1,325 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+   --swiper-theme-color: #bb2a8c !important;
+   --mainGradient: #bb2a8c;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Ubuntu", sans-serif;
+}
+
+.custom_swiper {
+   padding-block: 3rem !important;
+}
+
+@layer components {
+   .btn {
+      @apply active:brightness-95 hover:brightness-105 disabled:brightness-90 disabled:cursor-not-allowed inline-flex items-center justify-center px-6 py-3 transition-opacity duration-200 outline-none focus:outline-none cursor-pointer font-inter text-base font-semibold;
+   }
+
+   .btn-primary {
+      @apply btn text-black bg-gradient;
+   }
+
+   .btn-secondary {
+      @apply btn text-accent bg-transparent outline outline-1 outline-[var(--mainGradient)] hover:text-black hover:bg-gradient;
+   }
+
+   .card {
+      @apply p-5 md:p-10 rounded-xl shadow hover:bg-lightGreen;
+   }
+
+   .title {
+      @apply text-3xl md:text-4xl text-primaryBlack font-bold font-inter;
+   }
+
+   .subtitle {
+      @apply text-lg md:text-xl font-medium text-secondaryBlack font-inter;
+   }
+
+   .nav-links {
+      @apply text-base font-medium text-primaryBlack hover:text-accent transition-colors duration-200;
+   }
+
+   .input {
+      @apply block w-full px-4 py-4 text-primaryBlack bg-white border border-lightgray focus:outline-none focus:ring-accent focus:border-accent caret-accent;
+   }
+}
+
+/* .backToTop {
+    bottom: 25px;
+    right: 25px;
+    position: fixed;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    -webkit-border-radius: 55px;
+    -moz-border-radius: 55px;
+    -ms-border-radius: 55px;
+    -o-border-radius: 55px;
+    background: var(--mainGradient);
+    transition: scale 0.1s ease-out;
+    z-index: 50;
+} */
+
+/* .backToTop:hover {
+    scale: 1.1;
+} */
+
+.bg-gradient {
+   background: var(--mainGradient);
+}
+
+.customCircle {
+   position: absolute;
+   width: 400px;
+   height: 400px;
+   background: transparent;
+   border: 8px solid #fff;
+   border-radius: 50%;
+}
+
+.customCircle.circle1 {
+   bottom: -200px;
+   right: -200px;
+}
+
+.customCircle.circle2 {
+   top: -260px;
+   left: -260px;
+}
+
+.privacy-screen {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: red;
+   z-index: 2;
+}
+
+/* important section paddings */
+.sectionPadding {
+   padding-inline: 16px !important;
+   max-width: 106rem;
+}
+
+/* responsive */
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 768px) {
+   .sectionPadding {
+      padding-inline: 32px !important;
+   }
+}
+
+@media (min-width: 1024px) {
+   .sectionPadding {
+      padding-inline: 40px !important;
+   }
+
+   .react-simple-image-viewer__modal > * {
+      max-width: 70% !important;
+   }
+}
+
+@media (min-width: 1280px) {
+   .sectionPadding {
+      padding-inline: 64px !important;
+   }
+}
+
+@media (min-width: 1440px) {
+   .sectionPadding {
+      padding-inline: 144px !important;
+   }
+}
+
+.blog-layout-custom-style .axil-post-details h1,
+.blog-layout-custom-style .axil-post-details h2,
+.blog-layout-custom-style .axil-post-details h3 {
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
+   font-weight: 600 !important;
+   line-height: 1.25 !important;
+}
+
+.axil-post-details h1 span {
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
+   font-weight: 600 !important;
+}
+
+.axil-post-details {
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
+}
+
+.line-clamp-2 {
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.trimuk_blog_slider .swiper-button-prev1 {
+   left: -30px !important;
+   display: block;
+   /* top: 50% !important; */
+   /* transform: translateY(-50%); */
+}
+
+.trimuk_blog_slider .swiper-button-next1 {
+   right: -30px !important;
+   /* top: 50% !important; */
+   /* transform: translateY(-50%); */
+   display: block;
+}
+
+.trimuk_blog_slider .swiper-button-prev,
+.trimuk_blog_slider .swiper-button-next {
+   display: hidden;
+}
+
+/* Hide default Swiper navigation icons */
+
+.swiper-button-prev1,
+.swiper-button-next1 {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   /* This centers the buttons vertically */
+   z-index: 10;
+   /* Ensures the buttons stay on top of other content */
+   /* Optional: add a background color to the button for better visibility */
+   padding: 10px;
+   /* Optional: adjust padding for better spacing around the icons */
+   cursor: pointer;
+}
+
+.swiper-button-prev1 {
+   left: -30px !important;
+   /* Adjust distance from the left side */
+}
+
+.swiper-button-next1 {
+   right: -30px !important;
+   /* Adjust distance from the right side */
+}
+
+/* When the prev or next button is disabled */
+.swiper-button-prev1.swiper-button-disabled,
+.swiper-button-next1.swiper-button-disabled {
+   opacity: 0.3;
+   /* Faded appearance */
+   cursor: not-allowed;
+   /* Show that the button is not clickable */
+   pointer-events: none;
+   /* Prevent interaction with the button */
+}
+
+.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+   left: -60px !important;
+}
+.single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+   right: -60px !important;
+}
+@media (max-width: 640px) {
+   .swiper-button-prev1 {
+      left: 10px !important;
+      /* Adjust left position for mobile */
+   }
+
+   .swiper-button-next1 {
+      right: 10px !important;
+      /* Adjust right position for mobile */
+   }
+
+   .trimuk_blog_slider .swiper-button-prev1 {
+      left: 10px !important;
+   }
+
+   .trimuk_blog_slider .swiper-button-next1 {
+      right: 10px !important;
+   }
+
+   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+      left: -16px !important;
+   }
+   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+      right: -16px !important;
+   }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+   .swiper-button-prev1 {
+      left: 10px !important; /* Adjust left position for medium devices */
+   }
+
+   .swiper-button-next1 {
+      right: 10px !important; /* Adjust right position for medium devices */
+   }
+
+   .trimuk_blog_slider .swiper-button-prev1 {
+      left: 10px !important;
+   }
+   .trimuk_blog_slider .swiper-button-next1 {
+      right: 10px !important;
+   }
+
+   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-prev1 {
+      left: 0px !important;
+   }
+   .single-related-blog-trimuk .trimuk_blog_slider .swiper-button-next1 {
+      right: 0px !important;
+   }
+}
+
+.blog-template-modal .react-responsive-modal-container,
+.blog-template-modal .react-responsive-modal-modal {
+   border-radius: 20px !important;
+}
+
+.customModal {
+   z-index: 99999 !important;
+   padding: 0px !important;
+   max-width: 1232px !important;
+}
+
+.post-content h1,
+.post-content h1 span {
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
+   font-weight: 600 !important;
+   line-height: 1.25 !important;
+}
+
+.blog-layout-custom-style {
+   font-family: __Poppins_63af5f, __Poppins_Fallback_63af5f !important;
+}
+
+@media (max-width: 768px) {
+   .blog-layout-custom-style .post-content h1 span {
+      line-height: 1 !important;
+   }
+}
+
+@media (max-width: 620px) {
+   .blog-layout-custom-style .post-content h1 span {
+      line-height: 1 !important;
+   }
+}

@@ -1,0 +1,49 @@
+// COLORS
+$lightGray: #d6d4d4;
+$darkBlack: #313131;
+$mediumblu: #1e272d;
+
+
+.close-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.leftright,
+.rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  background-color: $lightGray;
+  border-radius: 2px;
+  transition: all 0.3s ease-in;
+}
+
+.leftright {
+  transform: rotate(45deg);
+}
+
+.rightleft {
+  transform: rotate(-45deg);
+}
+
+
+.close {
+  margin: 60px 0 0 5px;
+  position: absolute;
+}
+
+.close-container:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: $darkBlack;
+}
+.close-container:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: $darkBlack;
+}

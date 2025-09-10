@@ -1,0 +1,112 @@
+/* Initially hide custom navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+}
+
+/* Move arrows a bit outside the edge of the cards */
+.swiper-button-next {
+  right: -3.5%;
+}
+
+.swiper-button-prev {
+  left: -3.5%;
+}
+
+
+.swiper-pagination-bullet {
+  width: 14px !important;
+  height: 5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background-color: #fff !important;
+  display: inline-block !important;
+  margin-right: 6px !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+.review .swiper-pagination-bullet {
+  background-color: #6E7C87 !important;
+}
+
+.review .swiper-pagination-bullet-active {
+  background-color: #f1592b !important;
+
+}
+
+.swiper-pagination-bullet-active {
+  display: inline-block !important;
+  background-color: #f1592b !important;
+  width: 36px !important;
+  margin-right: 6px !important;
+  cursor: pointer !important;
+}
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -32px !important;
+}
+
+
+@media (min-width: 1225px) {
+
+  .swiper-button-next {
+    right: -4.5%;
+  }
+
+  .swiper-button-prev {
+    left: -4.5%;
+  }
+}
+
+@media (min-width: 640px) {
+
+  /* Adjust based on your design's breakpoint */
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex;
+    /* Show custom buttons on tablet and desktop */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f1592b;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  
+
+
+  /* Hide Swiper's default navigation arrows */
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+  }
+
+
+}
+
+
+
+
+/* Ensure Swiper's default navigation is hidden on all devices */
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+  cursor: auto;
+  pointer-events: none;
+}
+
+/* ------- */
+
+.carousel-item-padding-40-px {
+  margin-right: 16px;
+  /* Adjust the gap size as needed */
+}
