@@ -15,7 +15,7 @@ const GroupTitle = ({ title, href, id }: IGroupTitle) => {
          <div className="flex items-center justify-between border-b border-border pb-4">
             <Typography
                variant="Bold_H3"
-               className={cn("text-secondary capitalize ", blogFontConfig.title)}
+               className={cn("text-foreground capitalize ", blogFontConfig.title)}
             >
                {title}
             </Typography>

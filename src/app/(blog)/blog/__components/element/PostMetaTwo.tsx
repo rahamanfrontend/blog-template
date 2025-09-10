@@ -59,7 +59,7 @@ const PostMetaTwo = ({ metaData }: any) => {
                         </div>
                         <h1
                            className={cn(
-                              "!mb-4 block mt-5 font-bold  text-secondary",
+                              "!mb-4 block mt-5 font-bold  text-foreground",
                               blogFontConfig.title
                            )}
                            style={{
